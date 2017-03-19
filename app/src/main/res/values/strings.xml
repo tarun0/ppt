@@ -7,4 +7,5 @@
         <item>Female</item>
         <item>Transgender</item>
     </string-array>
+    <string name="title_activity_details">Details</string>
 </resources>
