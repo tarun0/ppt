@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 name=nameInput.getText().toString();
                 rollno=rollnoInput.getText().toString();
                 gender=genderInput.getSelectedItem().toString();
-                if(languageC.hasSelection()){
+                if(languageC.isChecked()){
                     language1="C";
                 }
                 else
                 language1=null;
-                if(languageJava.hasSelection()){
+                if(languageJava.isChecked()){
                     language2="Java";
                 }
                 else
