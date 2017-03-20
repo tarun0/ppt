@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class Details extends AppCompatActivity {
     String name;
     String rollno;
@@ -37,22 +39,30 @@ public class Details extends AppCompatActivity {
         language1= (String) extras.get("language1");
         language2= (String) extras.get("language2");
         CharSequence det;
+        TextView tvLanguage = (TextView) findViewById(R.id.tv_language);
+        TextView tvRoll = (TextView) findViewById(R.id.tv_roll);
+        TextView tvName = (TextView) findViewById(R.id.tv_name);
+        TextView tvGender = (TextView) findViewById(R.id.tv_gender);
+
         if(language1!=null&&language2!=null){
             det="Name: "+name+"\nRoll Number: "+rollno+"\nGender: "+gender+"\nProgramming Languages known:\n"+language1+"\n"+language2;
-
+            tvLanguage.setText(language1 + ", " + language2);
         }
         else if(language1==null&&language2==null){
             det="Name: "+name+"\nRoll Number: "+rollno+"\nGender: "+gender+"\nNo Programming Languages known\n";
+            tvLanguage.setText("null");
         }
         else if(language1==null){
             det="Name: "+name+"\nRoll Number: "+rollno+"\nGender: "+gender+"\nProgramming Languages known:\n"+language1;
-
+            tvLanguage.setText(language2);
         }
         else{
             det="Name: "+name+"\nRoll Number: "+rollno+"\nGender: "+gender+"\nProgramming Languages known:\n"+language2;
-
+            tvLanguage.setText(language1);
         }
-            details.setText(det);
+        tvGender.setText(gender);
+        tvName.setText(name);
+        tvRoll.setText(rollno);
 
     }
 
